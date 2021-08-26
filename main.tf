@@ -134,7 +134,7 @@ resource "azurerm_linux_virtual_machine" "rg-govin-linuxvm" {
   os_disk {
     name                 = "rg-govin-linuxvm_1-disk"
     caching              = "ReadWrite"
-    storage_account_type = "Prenium_LRS"
+    storage_account_type = "Premium_LRS"
   }
 
   source_image_reference {
@@ -144,7 +144,7 @@ resource "azurerm_linux_virtual_machine" "rg-govin-linuxvm" {
     version   = "latest"
   }
 
-  computer_name                   = "rg-govin-linux_1"
+  computer_name                   = "rg-govin-linux-1"
   admin_username                  = "azureuser"
   disable_password_authentication = true
 
