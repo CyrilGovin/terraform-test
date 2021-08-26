@@ -79,7 +79,7 @@ resource "azurerm_network_interface" "rg-govin-nic" {
     public_ip_address_id          = azurerm_public_ip.rg-govin-publicip.id
   }
 
-  tags {
+  tags = {
     environment = "Terraform test"
   }
 }
