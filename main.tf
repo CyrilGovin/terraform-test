@@ -35,7 +35,7 @@ resource "azurerm_virtual_network" "rg-govin-network" {
 #Create public IPs
 resource "azurerm_public_ip" "rg-govin-publicip" {
   name                = "govin-public-ip"
-  localtion           = "westeurope"
+  location           = "westeurope"
   resource_group_name = azurerm_resource_group.rg-govin.name
   allocation_method   = "Dynamic"
 
