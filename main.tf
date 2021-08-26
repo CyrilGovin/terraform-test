@@ -85,7 +85,7 @@ resource "azurerm_network_interface" "rg-govin-nic" {
 }
 
 #Connect security group to the network interface
-resource "asurerm_network_interface_security_group_association" "rg-govin-nic-sga" {
+resource "azurerm_network_interface_security_group_association" "rg-govin-nic-sga" {
   network_interface_id      = azurerm_network_interface.rg-govin-nic.id
   network_security_group_id = azurerm_network_security_group.rg-govin-nsg.id
 }
@@ -103,7 +103,7 @@ resource "random_id" "randomId" {
 #Create storage account for boot diagnostics
 resource "azurerm_storage_account" "rg-govin-storageaccount" {
   name                     = "diag${random_id.randomId.hex}"
-  resource_group_name      = asurerm_resource_group.rg-govin.name
+  resource_group_name      = azurerm_resource_group.rg-govin.name
   location                 = "westeurope"
   account_tier             = "Standard"
   account_replication_type = "LRS"
