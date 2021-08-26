@@ -32,6 +32,14 @@ resource "azurerm_virtual_network" "rg-govin-network" {
   }
 }
 
+#Create subnet
+resource "azurerm_subnet" "rg-govin-subnet" {
+  name = "rg-govin-subnet"
+  resource_group_name  = azurerm_resource_group.rg-govin.name
+  virtual_network_name = azurerm_virtual_network.rg-govin-network.nale
+  address_prefixes     = ["10.0.1.0/24"]
+}
+
 #Create public IPs
 resource "azurerm_public_ip" "rg-govin-publicip" {
   name                = "govin-public-ip"
