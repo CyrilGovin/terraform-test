@@ -36,7 +36,7 @@ resource "azurerm_virtual_network" "rg-govin-network" {
 resource "azurerm_subnet" "rg-govin-subnet" {
   name = "rg-govin-subnet"
   resource_group_name  = azurerm_resource_group.rg-govin.name
-  virtual_network_name = azurerm_virtual_network.rg-govin-network.nale
+  virtual_network_name = azurerm_virtual_network.rg-govin-network.name
   address_prefixes     = ["10.0.1.0/24"]
 }
 
