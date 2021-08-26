@@ -83,7 +83,7 @@ resource "azurerm_network_interface" "rg-govin-nic" {
 
   ip_configuration {
     name                          = "rg-govin-NicConfiguration"
-    subnet_id                     = azurerm_resource_group.rg-govin-subnet.id
+    subnet_id                     = azurerm_subnet.rg-govin-subnet.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.rg-govin-publicip.id
   }
